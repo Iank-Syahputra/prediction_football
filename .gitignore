@@ -1,0 +1,39 @@
+# Environment virtual
+myvenv/
+.venv/
+venv/
+env/
+
+# Cache dan artefak Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Cache alat bantu
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data hasil olahan (dibuat ulang dari notebook)
+data/processed/
+
+# Editor dan sistem operasi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log dan konfigurasi lokal
+*.log
+.env
+.env.*

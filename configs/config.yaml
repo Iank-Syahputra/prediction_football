@@ -1,0 +1,30 @@
+# Konfigurasi project.
+# Nilai di bawah ini adalah titik awal untuk dijalankan, bukan hasil penyetelan.
+
+elo:
+  k: 30                # default awal, belum disetel
+  home_adv: 100        # default awal, belum disetel
+  init: 1500           # default awal, belum disetel
+  use_goal_mult: true  # default awal, belum disetel
+
+form:
+  n_form: 5            # default awal, belum disetel
+  rest_cap: 365        # default awal, belum disetel
+
+baseline:
+  elo:
+    home_adv: 100      # sama dengan fitur Elo; tidak disetel di Section 6
+    beta_init: 0.005756  # ln(10) / 400
+    nu_init: 1.0
+    beta_bounds: [0.00001, 0.05]
+    nu_bounds: [0.001, 20.0]
+  logistic:
+    C: 1.0             # regularisasi default, belum disetel
+    max_iter: 2000
+
+evaluation:
+  n_bootstrap: 2000
+  seed: 42
+  alpha: 0.05
+  calibration_bins_tahunan: 10
+  calibration_bins_asean: 5
