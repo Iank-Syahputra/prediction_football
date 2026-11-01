@@ -1,0 +1,79 @@
+{
+  "boundary_tests": {
+    "elo_extreme_bounds_valid": true,
+    "elo_extreme_sum_to_one": true,
+    "elo_extreme_monotonic": true,
+    "model_extreme_elo_valid": true,
+    "model_extreme_elo_monotonic": true,
+    "oov_teams_handled_gracefully": true,
+    "malformed_csv_rejection": true,
+    "neutral_and_friendly_toggles": true
+  },
+  "monte_carlo_stability": {
+    "batch_summary": {
+      "Thailand": {
+        "mean": 30.8,
+        "std": 1.51,
+        "min": 27.9,
+        "max": 32.3,
+        "target": 31.0,
+        "se_pct": 1.46,
+        "ci_95": [
+          28.13,
+          33.87
+        ],
+        "within_ci": true
+      },
+      "Indonesia": {
+        "mean": 27.22,
+        "std": 1.33,
+        "min": 25.8,
+        "max": 29.5,
+        "target": 27.5,
+        "se_pct": 1.41,
+        "ci_95": [
+          24.73,
+          30.27
+        ],
+        "within_ci": true
+      },
+      "Vietnam": {
+        "mean": 23.88,
+        "std": 1.75,
+        "min": 21.4,
+        "max": 26.5,
+        "target": 22.0,
+        "se_pct": 1.31,
+        "ci_95": [
+          19.43,
+          24.57
+        ],
+        "within_ci": true
+      },
+      "Malaysia": {
+        "mean": 15.56,
+        "std": 1.06,
+        "min": 14.6,
+        "max": 17.5,
+        "target": 15.2,
+        "se_pct": 1.14,
+        "ci_95": [
+          12.97,
+          17.43
+        ],
+        "within_ci": true
+      }
+    },
+    "hierarchy_preserved": true,
+    "converged": true
+  },
+  "aff_52_integrity": {
+    "match_count": 52,
+    "calculated_log_loss": 0.5966,
+    "calculated_accuracy": 0.75,
+    "calculated_brier_score": 0.3331,
+    "target_threshold": 0.8198,
+    "passed": true
+  },
+  "errors": []
+}

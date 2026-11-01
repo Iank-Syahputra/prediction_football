@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Football Prediction & ASEAN Cup Simulator - Kelompok 1 (SDG 9)</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo-section">
+        <h1>⚽ AI Football Prediction & ASEAN Cup Studio</h1>
+        <div class="subtitle">Prediksi Hasil Pertandingan dan Probabilitas Juara ASEAN Cup Menggunakan Algoritma Machine Learning</div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-sdg">🌐 SDG 9: Inovasi & Infrastruktur</span>
+        <span class="badge badge-team">👥 Kelompok 1 - Divisi AI</span>
+        <span class="badge badge-model">🧠 Model: Random Forest (58.05% Acc)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <button class="nav-tab active" data-target="tabAseanSim">🏆 Simulasi Juara ASEAN Cup</button>
+      <button class="nav-tab" data-target="tabMatchPredict">⚽ Prediksi Head-to-Head</button>
+      <button class="nav-tab" data-target="tabLiveSim">⏱️ Simulasi Laga 90 Menit</button>
+      <button class="nav-tab" data-target="tabEda">📊 Eksplorasi Data (EDA)</button>
+      <button class="nav-tab" data-target="tabModelLab">🧠 Lab Model Machine Learning</button>
+      <button class="nav-tab" data-target="tabDynamicAdapt">⚡ Studio Adaptasi Dinamis</button>
+      <button class="nav-tab" data-target="tabPresentation">📽️ Presentasi Slide (11 Slide Revisi)</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- PROBLEM STATEMENT & TRUST TRIAD BANNER (SDG 9 & WEEK 4 MANDATE) -->
+    <div class="card" style="margin-bottom: 24px; border: 1.5px solid #0284c7; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="background:#0284c7; color:#fff; font-size:0.75rem; font-weight:700; padding:4px 8px; border-radius:4px;">SDG 9 INOVASI</span>
+          <h2 style="font-size:1.15rem; color:#f8fafc; margin:0;">Problem Statement: Mengeliminasi Ilusi Kepastian Sepak Bola</h2>
+        </div>
+        <span style="color:#38bdf8; font-weight:600; font-size:0.85rem;">Metrik Validasi: Multi-Class Log Loss 0.8198 ✔️</span>
+      </div>
+      
+      <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.5; margin-bottom:14px;">
+        <strong>Masalah Analisis Konvensional:</strong> Prediksi sepak bola seringkali terjebak pada bias opini dan ilusi kepastian semu (<em>"Tim A Pasti Menang"</em>). Sistem kami membangun <strong>Rantai Logika Probabilistik Murni</strong>: 49.945 Laga Historis &rarr; Fitur Pra-Laga Tanpa Leakage &rarr; Model Logistic Full Interaction &rarr; 10.000 Putaran Monte Carlo.
+      </p>
+
+      <div class="grid-3" style="gap:14px;">
+        <div style="background:rgba(2, 132, 199, 0.1); border-left:3px solid #0284c7; padding:10px; border-radius:4px;">
+          <div style="font-size:0.8rem; font-weight:700; color:#38bdf8; margin-bottom:4px;">🧠 Komparasi Arsitektur AI (vs YOLO11)</div>
+          <div style="font-size:0.78rem; color:#94a3b8; line-height:1.4;">
+            Jika tim deteksi aspal jalan menggunakan <strong>YOLO11 Computer Vision</strong> untuk mencari koordinat bounding box lubang jalan, model kami menggunakan <strong>Logistic Full Interaction + Stochastic Monte Carlo</strong> untuk memetakan koordinat probabilitas olahraga yang stokastik dan non-linear.
+          </div>
+        </div>
+
+        <div style="background:rgba(16, 185, 129, 0.1); border-left:3px solid #10b981; padding:10px; border-radius:4px;">
+          <div style="font-size:0.8rem; font-weight:700; color:#34d399; margin-bottom:4px;">🛡️ Tiga Lapis Kepercayaan (Trust Triad)</div>
+          <div style="font-size:0.78rem; color:#94a3b8; line-height:1.4;">
+            <strong>1. Data & Waktu:</strong> Cut-off 2024-12-08 (No Leakage, shootouts dikunci).<br/>
+            <strong>2. Model:</strong> Terkalibrasi Log Loss 0.8198 vs Baseline 1.0686.<br/>
+            <strong>3. Simulasi:</strong> 10.000 iterasi dengan aturan tiebreak resmi turnamen.
+          </div>
+        </div>
+
+        <div style="background:rgba(245, 158, 11, 0.1); border-left:3px solid #f59e0b; padding:10px; border-radius:4px;">
+          <div style="font-size:0.8rem; font-weight:700; color:#fbbf24; margin-bottom:4px;">🎯 Target Pihak Terbantu (Mandat Week 4)</div>
+          <div style="font-size:0.78rem; color:#94a3b8; line-height:1.4;">
+            <strong>Tim Liga & Timnas Underdogs:</strong> Tim dengan peluang rendah dapat melihat celah riil kekuatan lawan, menyiapkan kontra-taktik berbeda, dan mengoptimalkan strategi sebelum turnamen dimulai.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TAB 1: ASEAN Cup Simulation -->
+    <section id="tabAseanSim" class="tab-pane active">
+      <div class="card">
+        <div class="card-title">🏆 Probabilitas Juara ASEAN Cup (10.000 Iterasi Monte Carlo)</div>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">
+          Simulasi turnamen utuh (Fase Grup A & B, Semifinal 2 Leg, dan Final 2 Leg) menggunakan output probabilitas model Random Forest yang telah dilatih pada 49.000+ data laga internasional historis.
+        </p>
+
+        <div class="grid-2">
+          <!-- Leaderboard Table -->
+          <div>
+            <h3 style="font-size:1rem; margin-bottom:12px; color:#38bdf8;">📊 Leaderboard Peluang Juara</h3>
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Negara</th>
+                  <th>Juara</th>
+                  <th>Finalis</th>
+                  <th>Semifinal</th>
+                  <th>Gugur Grup</th>
+                </tr>
+              </thead>
+              <tbody id="aseanLeaderboardBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sample Bracket -->
+          <div>
+            <h3 style="font-size:1rem; margin-bottom:12px; color:#38bdf8;">🏟️ Simulasi Bagan Knockout (Contoh Turnamen)</h3>
+            <div style="background:#090d16; border:1px solid var(--border-color); border-radius:10px; padding:16px;">
+              
+              <div style="margin-bottom:16px;">
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Semifinal 1 (2 Leg Home-Away)</div>
+                <div id="sf1Text" style="font-size:0.95rem; font-weight:700; color:#cbd5e1; margin-top:4px;">Memuat data...</div>
+              </div>
+
+              <div style="margin-bottom:16px;">
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Semifinal 2 (2 Leg Home-Away)</div>
+                <div id="sf2Text" style="font-size:0.95rem; font-weight:700; color:#cbd5e1; margin-top:4px;">Memuat data...</div>
+              </div>
+
+              <div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:8px; padding:14px;">
+                <div style="font-size:0.75rem; text-transform:uppercase; color:#60a5fa; font-weight:800;">Grand Final ASEAN Cup (2 Leg Home-Away)</div>
+                <div id="finalText" style="font-size:1.05rem; font-weight:800; color:#34d399; margin-top:6px;">Memuat data...</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Match Predictor -->
+    <section id="tabMatchPredict" class="tab-pane">
+      <div class="grid-2">
+        
+        <!-- Controls Card -->
+        <div class="card">
+          <div class="card-title">⚙️ Konfigurasi Laga</div>
+          
+          <div class="form-group">
+            <label for="homeTeamSelect">Tim Kandang (Home Team)</label>
+            <select id="homeTeamSelect" onchange="executePrediction()"></select>
+          </div>
+
+          <div class="form-group">
+            <label for="awayTeamSelect">Tim Tandang (Away Team)</label>
+            <select id="awayTeamSelect" onchange="executePrediction()"></select>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="neutralVenueCheck" onchange="executePrediction()">
+            <label for="neutralVenueCheck">Venue Netral (Neutral Venue / Tanpa Keuntungan Kandang)</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="friendlyCheck" onchange="executePrediction()">
+            <label for="friendlyCheck">Laga Uji Coba (Friendly Match)</label>
+          </div>
+
+          <button class="btn" style="width:100%; margin-top:20px;" onclick="executePrediction()">
+            🔮 Hitung Prediksi Machine Learning
+          </button>
+        </div>
+
+        <!-- Prediction Result Card -->
+        <div class="card" id="predictionResultCard">
+          <div class="card-title">📈 Hasil Prediksi & Probabilitas Model</div>
+
+          <div class="prob-container">
+            <div class="prob-labels">
+              <span id="probHomeLabel" style="color:#10b981;">Home: 0%</span>
+              <span id="probDrawLabel" style="color:#f59e0b;">Draw: 0%</span>
+              <span id="probAwayLabel" style="color:#ef4444;">Away: 0%</span>
+            </div>
+            <div class="prob-bar-wrapper">
+              <div id="probBarHome" class="prob-segment prob-home" style="width:33%;"></div>
+              <div id="probBarDraw" class="prob-segment prob-draw" style="width:33%;"></div>
+              <div id="probBarAway" class="prob-segment prob-away" style="width:34%;"></div>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin:20px 0;">
+            <div class="stat-box">
+              <div class="stat-label">Prediksi Hasil Utama</div>
+              <div class="stat-value" id="predOutcomeText" style="font-size:1.25rem; color:#38bdf8;">-</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Estimasi Skor (Poisson)</div>
+              <div class="stat-value" id="predScoreText" style="font-size:1.4rem; color:#34d399;">-</div>
+            </div>
+          </div>
+
+          <!-- Head to head & Stats Table -->
+          <div style="font-size:0.85rem; margin-top:16px;">
+            <div style="font-weight:700; margin-bottom:8px; color:#cbd5e1;">Perbandingan Statistik Pra-Laga:</div>
+            <table class="custom-table" style="font-size:0.8rem;">
+              <thead>
+                <tr>
+                  <th>Metrik Historis</th>
+                  <th>Kandang</th>
+                  <th>Tandang</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total Pertandingan</td>
+                  <td id="predStatsHomeMatches">-</td>
+                  <td id="predStatsAwayMatches">-</td>
+                </tr>
+                <tr>
+                  <td>Historical Win Rate</td>
+                  <td id="predStatsHomeWinRate">-</td>
+                  <td id="predStatsAwayWinRate">-</td>
+                </tr>
+                <tr>
+                  <td>Rata-rata Gol / Laga</td>
+                  <td id="predStatsHomeAvgGf">-</td>
+                  <td id="predStatsAwayAvgGf">-</td>
+                </tr>
+                <tr>
+                  <td>Form Poin (5 Laga Terakhir)</td>
+                  <td id="predStatsHomeForm">-</td>
+                  <td id="predStatsAwayForm">-</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div style="margin-top:12px; color:var(--text-muted); font-size:0.8rem;" id="h2hSummaryText">
+              Memuat data H2H...
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: Live 90-Minute Match Simulator -->
+    <section id="tabLiveSim" class="tab-pane">
+      <div class="card">
+        <div class="card-title">⏱️ Simulasi Pertandingan Lapangan (90 Menit Real-Time)</div>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+          Saksikan alur pertandingan interaktif yang di-generate berbasis distribusi Poisson dan probabilitas model Machine Learning untuk tim yang dipilih di tab Konfigurasi.
+        </p>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+          <div id="liveScoreBadge" style="font-size:1.6rem; font-weight:800; color:#38bdf8;">
+            Skor: Belum Dimulai
+          </div>
+          <button class="btn" id="btnRunLiveSim" onclick="runLiveMatchSimulation()">
+            ▶️ Jalankan Simulasi 90 Menit
+          </button>
+        </div>
+
+        <div class="timeline" id="matchTimeline">
+          <div style="color:#94a3b8; text-align:center; padding:30px;">
+            Klik tombol "Jalankan Simulasi 90 Menit" untuk melihat simulasi laga secara visual.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: EDA Insights -->
+    <section id="tabEda" class="tab-pane">
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="stat-box"><div class="stat-label">Total Pertandingan</div><div class="stat-value" id="edaTotalMatches">49,945</div></div>
+        <div class="stat-box"><div class="stat-label">Rentang Waktu</div><div class="stat-value" id="edaDateRange">1872 - 2026</div></div>
+        <div class="stat-box"><div class="stat-label">Persentase Home Win</div><div class="stat-value" id="edaHomeWinPct">49.0%</div></div>
+        <div class="stat-box"><div class="stat-label">Rata-rata Gol / Laga</div><div class="stat-value" id="edaAvgGoals">2.94</div></div>
+        <div class="stat-box"><div class="stat-label">Home Advantage Multiplier</div><div class="stat-value" id="edaHomeAdv">1.73x</div></div>
+        <div class="stat-box"><div class="stat-label">Total Laga ASEAN</div><div class="stat-value" id="edaAseanMatches">3,782</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📊 Visualisasi Eksplorasi Data (EDA)</div>
+        <div class="grid-2">
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">1. Distribusi Target (Home Win, Draw, Away Win)</h4>
+            <img src="/artifacts/eda_target_distribution.png" alt="Target Distribution" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">2. Pengaruh Venue Netral terhadap Hasil Laga</h4>
+            <img src="/artifacts/eda_match_context_and_neutral.png" alt="Neutral Venue Impact" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">3. Evolusi Produktivitas Gol per Dekade (1880 - 2020s)</h4>
+            <img src="/artifacts/eda_goals_and_era_trends.png" alt="Goals Per Decade" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">4. Win Rate Historis Tim Nasional ASEAN</h4>
+            <img src="/artifacts/eda_asean_performance.png" alt="ASEAN Win Rates" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: Model Lab -->
+    <section id="tabModelLab" class="tab-pane">
+      <div class="card">
+        <div class="card-title">🧠 Perbandingan Kinerja Model Machine Learning</div>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:16px;">
+          Evaluasi dilakukan pada <strong>Out-of-Time Test Set (2021 - 2026 / 6.162 laga riil)</strong> dengan aturan ketat zero-leakage temporal barrier.
+        </p>
+
+        <table class="custom-table" style="margin-bottom:24px;">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Akurasi</th>
+              <th>Macro F1</th>
+              <th>Weighted F1</th>
+              <th>Home Win F1</th>
+              <th>Draw F1</th>
+              <th>Away Win F1</th>
+            </tr>
+          </thead>
+          <tbody id="modelComparisonBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+
+        <div class="grid-2">
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">Confusion Matrix (Random Forest)</h4>
+            <img src="/artifacts/confusion_matrix.png" alt="Confusion Matrix" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+          <div>
+            <h4 style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;">Feature Importance (Gini Score)</h4>
+            <img src="/artifacts/feature_importance.png" alt="Feature Importance" style="width:100%; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: Presentation Deck -->
+    
+    <!-- TAB: Dynamic Adaptability Studio -->
+    <section id="tabDynamicAdapt" class="tab-pane">
+      <div class="card">
+        <div class="card-title">⚡ Studio Adaptasi Data Dinamis & Real-Time Recalculation</div>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:20px;">
+          Fitur ini membuktikan kemampuan adaptasi AI secara interaktif: pengguna dapat menyuntikkan data pertandingan baru atau memodifikasi parameter tim, dan sistem langsung memperbarui Elo rating, form, serta menjalankan ulang 10.000 simulasi Monte Carlo secara real-time.
+        </p>
+
+        <div class="grid-2">
+          <!-- Ingest Match -->
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:8px; border:1px solid #334155;">
+            <h3 style="font-size:0.95rem; color:#38bdf8; margin-bottom:12px;">⚽ Suntikkan Hasil Laga Baru (Update H2H & Form)</h3>
+            <div class="grid-2" style="gap:10px; margin-bottom:10px;">
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Tim Kandang</label>
+                <select id="adaptHomeTeam" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;"></select>
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Skor Kandang</label>
+                <input type="number" id="adaptHomeScore" value="2" min="0" max="20" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap:10px; margin-bottom:14px;">
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Tim Tandang</label>
+                <select id="adaptAwayTeam" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;"></select>
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Skor Tandang</label>
+                <input type="number" id="adaptAwayScore" value="1" min="0" max="20" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="submitNewMatch()">
+              📥 Ingest Pertandingan & Perbarui Statistik Form
+            </button>
+            <div id="ingestFeedback" style="font-size:0.8rem; margin-top:8px; color:#34d399;"></div>
+          </div>
+
+          <!-- Adjust Team Parameters -->
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:8px; border:1px solid #334155;">
+            <h3 style="font-size:0.95rem; color:#34d399; margin-bottom:12px;">⚙️ Modifikasi Parameter Kekuatan Tim</h3>
+            <div style="margin-bottom:10px;">
+              <label style="font-size:0.75rem; color:#94a3b8;">Pilih Tim untuk Dimodifikasi</label>
+              <select id="paramTeamSelect" onchange="loadTeamParamsToEdit()" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;"></select>
+            </div>
+
+            <div class="grid-2" style="gap:10px; margin-bottom:10px;">
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Win Rate Historis (0.0 - 1.0)</label>
+                <input type="number" step="0.01" id="editWinRate" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Poin Form 5 Laga (0 - 15)</label>
+                <input type="number" step="0.5" id="editRecentPts" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap:10px; margin-bottom:14px;">
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Rata-rata Gol Cetak (GF)</label>
+                <input type="number" step="0.1" id="editAvgGF" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#94a3b8;">Rata-rata Kebobolan (GA)</label>
+                <input type="number" step="0.1" id="editAvgGA" style="width:100%; padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:6px;">
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px;">
+              <button class="btn btn-secondary" style="flex:1;" onclick="applyTeamParams()">
+                💾 Simpan Parameter
+              </button>
+              <button class="btn" style="flex:1; background:#0284c7;" onclick="recalculateMonteCarlo()">
+                🔄 Hitung Ulang 10k Monte Carlo
+              </button>
+            </div>
+            <div id="paramFeedback" style="font-size:0.8rem; margin-top:8px; color:#38bdf8;"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+          <button class="btn btn-secondary" onclick="resetToBaselineData()" style="border-color:#ef4444; color:#f87171;">
+            ↺ Reset ke Data Asli Kaggle
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tabPresentation" class="tab-pane">
+      <div class="slide-deck">
+        <div>
+          <div class="slide-header">
+            <div>
+              <span class="slide-number" id="slideNum">01 / 12</span>
+              <span style="font-size:0.8rem; color:var(--text-muted); margin-left:12px;">Navigasi: Tombol atau Panah Keyboard ← / →</span>
+            </div>
+            <span class="badge badge-team">VINIX7 Kelompok 1 - AI</span>
+          </div>
+
+          <div class="slide-content">
+            <h2 id="slideTitle">Judul Slide</h2>
+            <div id="slideSubtitle" style="color:#38bdf8; font-weight:600; font-size:1rem; margin-bottom:16px;">Subjudul</div>
+            <div class="slide-body" id="slideBody">
+              <!-- Dynamically populated slide content -->
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="slide-notes" id="slideNotes">
+            <!-- Presenter notes -->
+          </div>
+
+          <div class="slide-controls">
+            <button class="btn btn-secondary" id="btnPrevSlide">⬅️ Slide Sebelumnya</button>
+            <div style="color:var(--text-muted); font-size:0.85rem;">Tekan Spasi atau Panah Kanan untuk Lanjut</div>
+            <button class="btn" id="btnNextSlide">Slide Berikutnya ➡️</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>Kelompok 1 (Artificial Intelligence) • SDG 9: Industri, Inovasi, & Infrastruktur Digital</div>
+    <div style="margin-top:4px; font-size:0.75rem; color:#64748b;">
+      Kenny Helim (BINUS University), Arya Wicaksana (Univ. Esa Unggul), M. Ihram Syahputra (Univ. Halu Oleo), Gisela Venska M. (President Univ.), Christian (BINUS University)
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

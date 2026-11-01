@@ -1,0 +1,52 @@
+VINIX7
+
+WEEK 4 ASSIGNMENT
+
+Kelompok Game of the Year:
+
+Bisa mention siapa pihak yang kalian tuju & paling terbantu oleh penggunaan model (Misal developer game
+yang ada di STEAM, misal juga: panelis Game of The Year)
+Bisa input juga, setelah menggunakan untuk memprediksi pemenang GoTY, apakah ada potensi kegunaan
+model ke depannya selain tujuan tersebut, misal: mendeteksi apakah review ini asli atau palsu (bot)
+Ketika Final Project Presentation, bisa melakukan demo persis seperti recording youtube yang sudah dibuat
+Bisa konsultasi juga ke Pak Aslan dari model yang dibuat, apakah ada hal yang bisa ditingkatkan kembali
+
+Kelompok Jalan Berlubang YOLO11
+
+✓
+
+Bisa melanjutkan progress eksperimen pelatihan 3 (weather only) dan 4 (weather lighting)
+Bisa menuliskan resiko/limitation dari penggunaan ML/AI model untuk membantu klasifikasi jalan rusak di
+final project presentation
+Bisa mencantumkan ketika model kita dipakai oleh pengguna (contoh: lembaga, government, social
+organization), kira-kira apakah ada hal yang mereka perlu siapkan (contoh: manpower, dokumentasi seperti
+kamera, dll)
+Bisa mencantumkan  juga apa benefit dari pengguna ketika menggunakan model (misal: mereka bisa
+menggunakan Model untuk membuat list prioritas jalan mana yang paling parah sehingga perlu diperbaiki
+secepat mungkin) dan terhindar dari bias/subjetivitas penilaian manusia
+Bisa konsultasi juga ke Pak Aslan dari model yang dibuat, apakah ada hal yang bisa ditingkatkan kembali
+
+FAST TRACK AI • WEEK 4
+
+12
+
+WEEK 4 ASSIGNMENT
+
+VINIX7
+
+Kelompok International Football:
+
+Bisa mention siapa pihak yang kalian tuju & paling terbantu oleh penggunaan model (Misal: team liga yang
+berada pada probabilitas yang rendah, sehingga bisa tahu apa yang harus dipersipkan, strategi yang berbeda
+dari tahun-tahun sebelumnya, dll)
+Bisa konsultasi juga ke Pak Aslan dari model yang dibuat, apakah ada hal yang bisa ditingkatkan kembali
+
+Range Final Project Presentation ada di tanggal 2 - 6 November 2026
+
+✓
+
+FAST TRACK AI • WEEK 4
+
+12
+
+

@@ -1,0 +1,176 @@
+{
+  "iterations": 10000,
+  "leaderboard": [
+    {
+      "team": "Thailand",
+      "champion_pct": 31.26,
+      "finalist_pct": 54.4,
+      "semi_finalist_pct": 92.72,
+      "group_exit_pct": 7.28
+    },
+    {
+      "team": "Indonesia",
+      "champion_pct": 27.99,
+      "finalist_pct": 49.31,
+      "semi_finalist_pct": 85.97,
+      "group_exit_pct": 14.03
+    },
+    {
+      "team": "Vietnam",
+      "champion_pct": 22.79,
+      "finalist_pct": 47.5,
+      "semi_finalist_pct": 88.49,
+      "group_exit_pct": 11.51
+    },
+    {
+      "team": "Malaysia",
+      "champion_pct": 15.08,
+      "finalist_pct": 36.15,
+      "semi_finalist_pct": 79.8,
+      "group_exit_pct": 20.2
+    },
+    {
+      "team": "Singapore",
+      "champion_pct": 1.35,
+      "finalist_pct": 6.37,
+      "semi_finalist_pct": 25.31,
+      "group_exit_pct": 74.69
+    },
+    {
+      "team": "Philippines",
+      "champion_pct": 1.21,
+      "finalist_pct": 4.67,
+      "semi_finalist_pct": 18.97,
+      "group_exit_pct": 81.03
+    },
+    {
+      "team": "Myanmar",
+      "champion_pct": 0.31,
+      "finalist_pct": 1.38,
+      "semi_finalist_pct": 6.47,
+      "group_exit_pct": 93.53
+    },
+    {
+      "team": "Cambodia",
+      "champion_pct": 0.01,
+      "finalist_pct": 0.21,
+      "semi_finalist_pct": 2.05,
+      "group_exit_pct": 97.95
+    },
+    {
+      "team": "Timor-Leste",
+      "champion_pct": 0.0,
+      "finalist_pct": 0.0,
+      "semi_finalist_pct": 0.12,
+      "group_exit_pct": 99.88
+    },
+    {
+      "team": "Laos",
+      "champion_pct": 0.0,
+      "finalist_pct": 0.01,
+      "semi_finalist_pct": 0.1,
+      "group_exit_pct": 99.9
+    }
+  ],
+  "sample_tournament": {
+    "group_a_standings": [
+      {
+        "team": "Malaysia",
+        "pts": 8,
+        "gf": 9,
+        "ga": 5,
+        "gd": 4,
+        "wins": 2
+      },
+      {
+        "team": "Thailand",
+        "pts": 8,
+        "gf": 8,
+        "ga": 6,
+        "gd": 2,
+        "wins": 2
+      },
+      {
+        "team": "Singapore",
+        "pts": 5,
+        "gf": 3,
+        "ga": 5,
+        "gd": -2,
+        "wins": 1
+      },
+      {
+        "team": "Cambodia",
+        "pts": 3,
+        "gf": 7,
+        "ga": 8,
+        "gd": -1,
+        "wins": 1
+      },
+      {
+        "team": "Timor-Leste",
+        "pts": 3,
+        "gf": 4,
+        "ga": 7,
+        "gd": -3,
+        "wins": 1
+      }
+    ],
+    "group_b_standings": [
+      {
+        "team": "Myanmar",
+        "pts": 8,
+        "gf": 9,
+        "ga": 5,
+        "gd": 4,
+        "wins": 2
+      },
+      {
+        "team": "Indonesia",
+        "pts": 8,
+        "gf": 8,
+        "ga": 4,
+        "gd": 4,
+        "wins": 2
+      },
+      {
+        "team": "Vietnam",
+        "pts": 7,
+        "gf": 10,
+        "ga": 4,
+        "gd": 6,
+        "wins": 2
+      },
+      {
+        "team": "Philippines",
+        "pts": 2,
+        "gf": 7,
+        "ga": 14,
+        "gd": -7,
+        "wins": 0
+      },
+      {
+        "team": "Laos",
+        "pts": 1,
+        "gf": 3,
+        "ga": 10,
+        "gd": -7,
+        "wins": 0
+      }
+    ],
+    "semi_finals": [
+      {
+        "match": "Malaysia vs Indonesia",
+        "winner": "Malaysia"
+      },
+      {
+        "match": "Myanmar vs Thailand",
+        "winner": "Myanmar"
+      }
+    ],
+    "final": {
+      "match": "Malaysia vs Myanmar",
+      "winner": "Malaysia",
+      "runner_up": "Myanmar"
+    }
+  }
+}
