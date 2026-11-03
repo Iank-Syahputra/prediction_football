@@ -57,9 +57,26 @@ The model was subjected to out-of-time evaluation on all 52 official AFF Champio
 | **`FINAL_PROJECT_PRESENTATION_REVISED_PARADIGM.pptx`** | **11-Slide Master Defense Presentation** (16:9 widescreen, Executive Dark Slate aesthetic). |
 | **`docs/DEFENSE_PRESENTATION_SCRIPT.md`** | Complete **15-minute spoken presentation script** + 10 defense Q&A answers for Pak Aslan Alwi & Bimo Rizki. |
 | **`docs/AI_METHODOLOGY_AND_YOLO11_COMPARISON.md`** | In-depth academic monograph comparing **Tabular Probabilistic Forecasting** vs **Computer Vision (YOLO11)**. |
+| **`docs/DEMO_STREAMLIT_APP_FULL_WALKTHROUGH.mp4`** | **Complete Video Walkthrough** demonstrating all 5 tabs and real-time inference in Streamlit. |
 | **`tests/`** | **42 Real Unittests** (`test_elo.py`, `test_features.py`, `test_model_and_simulation.py`, `test_streamlit_app.py`, `test_compliance_and_invariants.py`) + `adversarial_stress_test.py` (**100% passing**). |
 | **`models/football_model.pkl`** | Serialized calibrated production model bundle with pre-fitted Scaler and Feature Pipeline. |
 | **`scripts/`** | Dynamic Elo rating calculation, Monte Carlo tournament simulation, and data preprocessing engines. |
+
+---
+
+## 4.1. Visual Interface Walkthrough (5-Tab Streamlit Dashboard)
+
+| Tab 1: Match Predictor (Head-to-Head) | Tab 2: Dynamic Live CSV Ingestion |
+| :---: | :---: |
+| ![Tab 1](docs/walkthrough_tab1_match_predictor.png) | ![Tab 2](docs/walkthrough_tab2_csv_ingestion.png) |
+
+| Tab 3: 10,000-Run Monte Carlo Simulation | Tab 4: Diagnostics & YOLO11 Comparison |
+| :---: | :---: |
+| ![Tab 3](docs/walkthrough_tab3_monte_carlo.png) | ![Tab 4](docs/walkthrough_tab4_model_evaluation.png) |
+
+| Tab 5: Underdog Tactical Lab | Full Video Walkthrough |
+| :---: | :---: |
+| ![Tab 5](docs/walkthrough_tab5_tactical_optimizer.png) | 🎬 [Watch Walkthrough MP4](docs/DEMO_STREAMLIT_APP_FULL_WALKTHROUGH.mp4) |
 
 ---
 
