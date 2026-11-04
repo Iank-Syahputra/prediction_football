@@ -10,6 +10,17 @@
 
 > **Sistem Pendukung Keputusan (Decision Support System - DSS) Berbasis Probabilistik Calibrated & Simulasi Stokastik Monte Carlo 10.000 Iterasi untuk Turnamen Sepak Bola ASEAN Cup (AFF Championship).**
 
+### 🌐 Digital Resource Hub Kelompok 1 (Tautan Resmi Penguji & Mentor)
+* 📁 **Google Drive (Video Walkthrough Full HD + Berkas Aplikasi Mandiri .ZIP)**:  
+  [Buka Folder Google Drive Kelompok 1](https://drive.google.com/drive/folders/1jqriPVp8YfardBAeW4K0WoVlVqcjP2f6?usp=sharing)
+* 🐙 **GitHub Repository (Branch main Resmi)**:  
+  [https://github.com/Iank-Syahputra/prediction_football](https://github.com/Iank-Syahputra/prediction_football)
+* 📑 **Slide Presentasi Sidang Gabungan 20 Slide (PDF & PPTX)**:  
+  - [Download PDF 20 Slide (Siap Baca)](kenny_version/FINAL_PROJECT_PRESENTATION_REVISED_PARADIGM.pdf)
+  - [Download PPTX 20 Slide (Naskah Pembicara Lengkap)](kenny_version/FINAL_PROJECT_PRESENTATION_REVISED_PARADIGM.pptx)
+* 🎬 **Video Walkthrough Demo Aplikasi (Full HD 30 FPS)**:  
+  [Lihat Rekaman MP4](kenny_version/docs/DEMO_STREAMLIT_APP_FULL_WALKTHROUGH.mp4)
+
 ---
 
 ## 👥 Tim Peneliti & Pengembang (Kelompok 1 - Divisi AI)
